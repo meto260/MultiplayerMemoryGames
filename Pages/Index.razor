@@ -1,0 +1,23 @@
+﻿@page "/"
+@layout HomeLayout
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Emilys+Candy&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+
+<div class="container">
+    <header>
+        <h1 class="emilys-candy-regular">🐸 GiggleFrog</h1>
+        <p class="cherry-bomb-one-regular">A Movement for Joy: From the Swamp to the Moon!</p>
+    </header>
+    <main>
+        <div class="gif-wrapper">
+            <img src="assets/gigglefrog.gif" alt="GiggleFrog GIF">
+        </div>
+
+        <a href="/game/@Guid.NewGuid().ToString()" class="action-button outfit">Play Shape Finding Game</a>
+    </main>
+
+</div>
+<script src="/js/script.js"></script>

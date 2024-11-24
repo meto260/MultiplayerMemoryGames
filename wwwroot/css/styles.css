@@ -1,0 +1,124 @@
+body {
+    background-image: linear-gradient(120deg, rgb(9, 115, 101), rgb(16, 14, 108));
+    background-color: rgb(14 48 108);
+    color: rgb(200, 195, 188);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+}
+
+    header h1 {
+        font-size: 2.5rem;
+        color: #2d6a4f;
+    }
+
+    header p {
+        color: rgb(192 205 209);
+        font-size: 29px;
+    }
+
+.gif-wrapper {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+    .gif-wrapper img {
+        width: 320px;
+        height: 240px;
+        border-radius: 10px;
+    }
+
+.action-button {
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+    .action-button:hover {
+        background: #40916c;
+    }
+
+main {
+    text-align: center;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #777;
+    text-align: center;
+}
+
+.emilys-candy-regular {
+    font-family: "Emilys Candy", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.cherry-bomb-one-regular {
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.outfit {
+    font-family: "Outfit", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.description-p {
+    padding: 20px;
+    width: 53%;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+.links-a {
+    text-decoration: none;
+    color: inherit;
+}
+
+    .links-a span {
+        margin-top: 2px;
+        position: absolute;
+        width: 80px;
+        text-align: left;
+        color: white;
+    }
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* İstediğiniz boşluğu ayarlayabilirsiniz */
+}
+
+.link-item {
+    width: 136px;
+    float: left;
+    padding: 20px;
+    font-weight: bolder;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}

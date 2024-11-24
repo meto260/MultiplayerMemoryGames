@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+.game-board {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    background-color: #979797;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card.flipped {
+    background-color: #333333;
+}
+
+.card svg {
+    width: 60px;
+    height: 60px;
+    display: none;
+}
+
+.card.flipped svg {
+    display: block;
+}
+
+/* Modal Stili */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #1f1f1f;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+}
+
+.modal-content h2 {
+    color: #ffffff;
+}
+
+.modal-content p {
+    color: #ffffff;
+}
+
+.modal-content button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #45a049;
+}
+
+.player-list {
+    margin-left: 20px;
+    color: #ffffff;
+}
+
+.player-list h3 {
+    margin-bottom: 10px;
+}
+
+.player-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.player-list li {
+    margin-bottom: 5px;
+}
+
+.myform {
+    width: 200px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+    .myform input, button {
+        background-color: #7d7a7a;
+        width: 100%;
+        margin: 12px;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        font-size: 14px;
+        font-weight: bold;
+    }
+.formButton {
+    width: 122%;
+    background-color: forestgreen;
+    color: white;
+}

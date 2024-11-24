@@ -1,0 +1,18 @@
+<div class="modal" style="display: @(IsVisible ? "block" : "none")">
+    <div class="modal-content">
+        <h2>Tebrikler!</h2>
+        <p>@WinnerName kazandı!</p>
+        <button @onclick="StartNewGame">Yeni Oyun Başlat</button>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public bool IsVisible { get; set; }
+
+    [Parameter]
+    public string WinnerName { get; set; }
+
+    [Parameter]
+    public EventCallback StartNewGame { get; set; }
+}
