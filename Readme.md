@@ -15,10 +15,12 @@ Welcome to **Match the Grid**, an engaging puzzle game where your goal is to fin
 ---
 
 ## **How to Play** 🕹️  
-1. Open the game and start your first match.  
-2. **Scan the Grid**: Observe the 8x8 grid carefully.  
-3. **Find Matches**: Identify sequences of identical shapes (rows, columns, or diagonal).  
-4. Score points as you find matches and aim for a high score.  
+1. Go to https://gigglefrog.xyz
+2. Click <b>"Play Shape Finding Game"</b> Button
+3. Open the game and start your first match.
+4. **Scan the Grid**: Observe the 8x8 grid carefully.  
+5. **Find Matches**: Identify sequences of identical shapes (rows, columns, or diagonal).  
+6. Score points as you find matches and aim for a high score.  
 
 ---
 
