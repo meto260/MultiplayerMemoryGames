@@ -1,6 +1,5 @@
 public class PlayerService {
     private readonly Dictionary<string, Dictionary<string, Player>> _channelPlayers = new Dictionary<string, Dictionary<string, Player>>();
-
     public void AddPlayer(string channelName, string nickname, string deviceId) {
         if (!_channelPlayers.ContainsKey(channelName)) {
             _channelPlayers[channelName] = new Dictionary<string, Player>();
@@ -44,9 +43,14 @@ public class PlayerService {
         if (_channelPlayers.ContainsKey(channelName)) {
             // 1 dakikadan fazla süre geçen oyuncularý temizle
             RemoveInactivePlayers(channelName);
-            return _channelPlayers[channelName].Values.ToList();
+            var players = _channelPlayers[channelName].Values.ToList();
+            return players;
         }
         return new List<Player>();
+    }
+
+    public void ClearChannel(string channelName) {
+        _channelPlayers[channelName].Clear();
     }
 
     private void RemoveInactivePlayers(string channelName) {

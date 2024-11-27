@@ -169,7 +169,7 @@ else
     </div>
 }
 
-<GameWonModal IsVisible="isGameWon" WinnerName="winnerName" StartNewGame="StartNewGame" />
+<GameWonModal IsVisible="isGameWon" WinnerName="@winnerName" StartNewGame="StartNewGame" />
 
 @code {
     [Parameter]
@@ -219,6 +219,17 @@ else
     private async void UpdatePlayerList(object state)
     {
         players = PlayerService.GetPlayers(roomname);
+
+        foreach (var player in players)
+        {
+            if (player.MatchedPairsCount > 0 && player.MatchedPairsCount == totalPairs)
+            {
+                isGameWon = true;
+                winnerName = player.Nickname;
+                PlayerService.ClearChannel(roomname);
+                break;
+            }
+        }
         await InvokeAsync(StateHasChanged);
     }
 
@@ -232,7 +243,8 @@ else
         try
         {
             await LocalStorageService.SetItemAsync("Nickname", nickname);
-
+            ChannelName = roomname;
+            NavigationManager.NavigateTo($"/game/{roomname}", false);
             gameStarted = true;
             cards = GenerateCards();
             totalPairs = cards.Count / 2;
@@ -252,6 +264,10 @@ else
         {
             return;
         }
+
+        var player = players.FirstOrDefault(p => p.Nickname.Equals(nickname) && p.DeviceId.Equals(deviceId));
+        if (player != null)
+            PlayerService.UpdatePlayerMatchedPairs(roomname, nickname, deviceId, player.MatchedPairsCount);
 
         var card = cards.First(c => c.Id == cardId);
         if (card.Flipped) return;
@@ -280,11 +296,13 @@ else
                 if (cards.All(c => c.Flipped))
                 {
                     isGameWon = true;
-                    winnerName = nickname;
+                    winnerName = player.Nickname;
+                    PlayerService.ClearChannel(roomname);
                 }
             }
-            StateHasChanged();
         }
+        
+        StateHasChanged();
     }
 
     private List<Card> GenerateCards()
